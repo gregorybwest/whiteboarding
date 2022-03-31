@@ -1,23 +1,18 @@
-# def staircase(height)
-#   i = 1
-#   while i <= height
-#     puts "#" * i 
-#     i += 1
-#   end
-# end
-
-# staircase(5)
-
-# n = height
-def staircase(n)
-  spaces = n - 1
-  blocks = 1
-  while spaces >= 0 && blocks <= n
+def staircase(height)
+  # first row has (height - 1) spaces
+  spaces = height - 1
+  # first row has 1 block
+  left_blocks = 1
+  right_blocks = 1
+  while spaces >= 0 && left_blocks <= height && right_blocks <= height
     print " " * spaces
-    puts "#" * blocks
-    blocks += 1
+    print "#" * left_blocks
+    print " "
+    puts "#" * right_blocks
+    left_blocks += 1
     spaces -= 1
+    right_blocks += 1
   end
 end
 
-staircase(5)
+staircase(12)
