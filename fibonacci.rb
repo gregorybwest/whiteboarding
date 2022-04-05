@@ -6,16 +6,24 @@
 # Output: 55
 
 
-
-
-
-
-def fibonacci(nth_number)
-  arr = [0, 1]
-  while arr.length < nth_number
-    arr << arr[-1] + arr[-2]
+def fibonacci(n)
+  first_num = 0
+  second_num = 1
+  (n - 1).times do
+    first_num, second_num = second_num, first_num + second_num
   end
-  arr[-1]
+  first_num
 end
+p fibonacci(100)
 
-p fibonacci(9)
+
+
+# def fibonacci(nth_number)
+#   arr = [0, 1]
+#   while arr.length < nth_number
+#     arr << arr[-1] + arr[-2]
+#   end
+#   arr[-1]
+# end
+
+# p fibonacci(9)
