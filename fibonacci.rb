@@ -6,17 +6,24 @@
 # Output: 55
 
 
+# def fibonacci(n)
+#   first_num = 0
+#   second_num = 1
+#   (n - 1).times do
+#     first_num, second_num = second_num, first_num + second_num
+#   end
+#   first_num
+# end
+# p fibonacci(100)
+
 def fibonacci(n)
-  first_num = 0
-  second_num = 1
+  arr = [0, 1]
   (n - 1).times do
-    first_num, second_num = second_num, first_num + second_num
+    arr[0], arr[1] = arr[1], arr[0] + arr[1]
   end
-  first_num
+  arr[0]
 end
-p fibonacci(100)
-
-
+p fibonacci(7)
 
 # def fibonacci(nth_number)
 #   arr = [0, 1]
