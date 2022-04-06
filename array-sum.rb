@@ -23,6 +23,8 @@
 # end
 # p array_sum([1, 2, 3, 4, 5])
 
+# First refactor
+
 def array_sum(array)
   sum = array[0]
   index = 1
@@ -33,3 +35,11 @@ def array_sum(array)
   sum
 end
 p array_sum([1, 2, 3, 4, 5])
+
+# Second refactor 
+
+def array_sum(array)
+  array[0..-1].reduce(:+) #  array.reduce(:+) ==> this gets same result
+end
+p array_sum([1, 2, 3, 4, 5])
+
