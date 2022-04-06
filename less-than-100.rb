@@ -8,15 +8,29 @@
   # If the element at array[index] is greater than or equal to 100, pop is off the array
 # Return the original array with the remaining elements
 
+# def less_than_one_hundred(array)
+#   index = 0
+#   while index < array.length
+#     if array[index] >= 100
+#       array.delete(array[index])
+#     end
+#     index += 1
+#   end
+#   array
+# end
+
+# p less_than_one_hundred([99, 101, 88, 4, 2000, 50])
+
 def less_than_one_hundred(array)
+  smaller_nums = []
   index = 0
   while index < array.length
-    if array[index] >= 100
-      array.delete(array[index])
+    if array[index] < 100
+      smaller_nums << array[index]
     end
     index += 1
   end
-  array
+  smaller_nums
 end
 
 p less_than_one_hundred([99, 101, 88, 4, 2000, 50])
