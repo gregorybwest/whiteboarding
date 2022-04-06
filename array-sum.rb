@@ -12,9 +12,20 @@
 # Set index = 0, as long as index is less than length of array, loop through each element of the array starting with array[0], adding each element to the previous element. 
 # Return the sum 
 
+# def array_sum(array)
+#   sum = 0
+#   index = 0
+#   while index < array.length
+#     sum += array[index]
+#     index += 1
+#   end
+#   sum
+# end
+# p array_sum([1, 2, 3, 4, 5])
+
 def array_sum(array)
-  sum = 0
-  index = 0
+  sum = array[0]
+  index = 1
   while index < array.length
     sum += array[index]
     index += 1
