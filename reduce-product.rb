@@ -15,15 +15,21 @@
   # increment index as long as it's less than the length of the array
 # Return the variable storing the product of all the numbers in the array
 
+# def reduce_product(array)
+#   product_so_far = array[0]
+#   index = 1
+#   while index < array.length
+#     product_so_far *= array[index]
+#     index += 1
+#   end
+#   product_so_far
+# end
+
+# p reduce_product([1, 2, 3, 4])
+
+
 def reduce_product(array)
-  product_so_far = array[0]
-  index = 1
-  while index < array.length
-    product_so_far *= array[index]
-    index += 1
-  end
-  product_so_far
+  array.reduce(:*)
 end
 
 p reduce_product([1, 2, 3, 4])
-
