@@ -15,17 +15,24 @@
   # starting at the end of the array, shovel the elements into a new array one at a time
 # return the new array
 
+# def reverse_array(array)
+#   reversed_array = []
+#   index = array.length - 1
+#   while index >= 0
+#     reversed_array << array[index]
+#     index -= 1
+#   end
+#   reversed_array
+# end
+
+# p reverse_array([1, 2, 3, 4, 5])
+
+
 def reverse_array(array)
-  reversed_array = []
-  index = array.length - 1
-  while index >= 0
-    reversed_array << array[index]
-    index -= 1
-  end
-  reversed_array
+  array.reverse
 end
 
-p reverse_array([1, 2, 3, 4, 5])
+p reverse_array([5, 10, 0, -5])
 
 
 
