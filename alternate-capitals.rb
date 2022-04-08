@@ -12,11 +12,28 @@
     # else, simply add the character without doing anything to it
 # return the new string
 
+# def alternate_capitals(string)
+#   alt_capitals = ""
+#   index = 0
+#   while index < string.length
+#     if index % 2 != 0
+#       alt_capitals += string[index].upcase
+#     else
+#       alt_capitals += string[index]
+#     end
+#     index += 1
+#   end
+#   alt_capitals
+# end
+
+# p alternate_capitals("hello, how are your porcupines today?")
+
+
 def alternate_capitals(string)
   alt_capitals = ""
   index = 0
   while index < string.length
-    if index % 2 != 0
+    if index.odd?
       alt_capitals += string[index].upcase
     else
       alt_capitals += string[index]
@@ -27,5 +44,4 @@ def alternate_capitals(string)
 end
 
 p alternate_capitals("hello, how are your porcupines today?")
-
 
