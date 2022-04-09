@@ -23,4 +23,6 @@ def is_prime(num)
   return "Prime"
 end
 
+current_time = Time.now
 p is_prime(1450019)
+p Time.now - current_time
