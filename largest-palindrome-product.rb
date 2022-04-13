@@ -10,17 +10,21 @@
     # If the product, converted to a string, then reversed, is equal to the product, store each number as a pair in an array, and print that array. Also store the products in an array, and print that array.
     
 def pallindrome_multipliers
+  largest_pallindrome_so_far = 0 
   index = 1
-  while index < 100
+  while index < 1000
     index2 = 1
-    while index2 < 100
+    while index2 < 1000
       if (index * index2).to_s == (index * index2).to_s.reverse
-        p [index, index2], [index * index2]
+        if index * index2 > largest_pallindrome_so_far
+          largest_pallindrome_so_far = index * index2
+        end
       end
       index2 += 1
     end
     index += 1
   end
+  largest_pallindrome_so_far
 end
 
-pallindrome_multipliers
+p pallindrome_multipliers
