@@ -32,5 +32,6 @@ def array_mesh(array)
 end
 
 p array_mesh(["a", "b", "c", "d"])
+p array_mesh(["z", "", "z",])
 
 
