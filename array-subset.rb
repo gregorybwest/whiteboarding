@@ -25,12 +25,12 @@ def array_subset(array1, array2)
   end
   array1.each do |num|
     if hash[num] 
-      hash[num] += 1
+      hash[num] -= 1
     end
   end
   p hash.values
   hash.values.each do |value| 
-    if value < 2
+    if value != 0
       return false
     end
   end
@@ -39,3 +39,4 @@ end
 
 p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
 p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 6])
+p array_subset([1, 2, 3, 4, 5, 6], [6, 3])
