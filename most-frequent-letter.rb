@@ -17,18 +17,19 @@
 
 def frequent_letter(string)
   letter_count = {}
+  no_spaces_string = string.gsub(/\s+/, "")
   index = 0
   most_frequent_count = 0
   most_frequent_letter = ""
-  while index < string.length
-    if letter_count[string[index]]
-      letter_count[string[index]] += 1
+  while index < no_spaces_string.length
+    if letter_count[no_spaces_string[index]]
+      letter_count[no_spaces_string[index]] += 1
     else
-      letter_count[string[index]] = 1
+      letter_count[no_spaces_string[index]] = 1
     end
-    if letter_count[string[index]] > most_frequent_count
-      most_frequent_count = letter_count[string[index]]
-      most_frequent_letter = string[index]
+    if letter_count[no_spaces_string[index]] > most_frequent_count
+      most_frequent_count = letter_count[no_spaces_string[index]]
+      most_frequent_letter = no_spaces_string[index]
     end
     index += 1
   end
@@ -36,3 +37,4 @@ def frequent_letter(string)
 end
 
 p frequent_letter("peter piper picked a peck of pickled peppers") # ==> "p"
+p frequent_letter("hello how are you?") # ==> "p"
