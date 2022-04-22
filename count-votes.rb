@@ -16,13 +16,14 @@
 def count_votes(votes_array)
   votes_hash = {}
   votes_array.each do |vote|
-    if votes_hash[vote]
-      votes_hash[vote] += 1
+    lowercase_vote = vote.downcase
+    if votes_hash[lowercase_vote]
+      votes_hash[lowercase_vote] += 1
     else
-      votes_hash[vote] = 1
+      votes_hash[lowercase_vote] = 1
     end
   end
   votes_hash
 end
 
-p count_votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"])
+p count_votes(["Dewey", "truman", "dewey", "Dewey", "Truman", "truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"])
