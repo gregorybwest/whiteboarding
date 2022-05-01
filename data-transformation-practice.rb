@@ -12,3 +12,6 @@ while index < pairs.length
 end
 
 puts pairs_hash
+
+# faster way to do the code above 
+puts [[1, 3], [8, 9], [2, 16]].to_h
