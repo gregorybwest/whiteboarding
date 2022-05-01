@@ -45,5 +45,13 @@ end
 
 p letter_hash("bookkeeper") == {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1} # ==> true 
 
+#  4. Convert a hash into an array of arrays.
+#  For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
 
+things = {"chair" => 100, "book" => 14, "ball" => 12}
+name_price_pairs = []
+things.each do |name, price|
+  name_price_pairs << [name, price]
+end
+p name_price_pairs
 
