@@ -53,5 +53,7 @@ name_price_pairs = []
 things.each do |name, price|
   name_price_pairs << [name, price]
 end
+
 p name_price_pairs
+p things.to_a
 
