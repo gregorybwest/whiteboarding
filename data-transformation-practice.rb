@@ -12,9 +12,8 @@ while index < pairs.length
 end
 
 puts pairs_hash
-
 # faster way to do the code above 
-puts [[1, 3], [8, 9], [2, 16]].to_h
+puts pairs.to_h
 
 #  2. Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
 #  For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
@@ -26,4 +25,25 @@ while index < hashes_array.length
   info_hash[hashes_array[index][:id]] = hashes_array[index]
   index += 1
 end
+
 p info_hash
+
+# 3. Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
+# For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
+
+def letter_hash(string)
+  letter_hash = {}
+  string.each_char do |letter|
+    if !letter_hash[letter]
+      letter_hash[letter] = 1
+    else
+      letter_hash[letter] += 1
+    end
+  end
+  letter_hash
+end
+
+p letter_hash("bookkeeper") == {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1} # ==> true 
+
+
+
