@@ -68,6 +68,22 @@ people.each do |id, person|
 end
 p people_array
 
+#  6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
+#  For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
+
+words = ["do", "or", "do", "not"]
+word_count = {}
+words.each do |word|
+  if !word_count[word]
+    word_count[word] = 1
+  else
+    word_count[word] += 1
+  end
+end
+p word_count
+
+
+
 
 
 
