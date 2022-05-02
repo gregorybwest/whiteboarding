@@ -92,6 +92,8 @@ hash.each do |letter, number|
   flattened_array << number
 end
 p flattened_array
+p hash.to_a.flatten
+
 
 
 
