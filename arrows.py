@@ -1,7 +1,7 @@
 def solution(S):
     count = {}
-    for c in S:
-        count[c] = count.setdefault(c, 0)+1
+    for char in S:
+        count[char] = count.setdefault(char, 0)+1
     most_frequent_arrow = (max(count, key=count.get))
     return(len(S) - count[most_frequent_arrow])
 
