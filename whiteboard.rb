@@ -26,13 +26,23 @@
 # input: [1, 2, 3, 4, 10]
 # output: 240
 
+# def product(array)
+#   product_so_far = 1
+#   array.each do |num|
+#     product_so_far *= num
+#   end
+#   product_so_far
+# end
+
 def product(array)
-  product_so_far = 1
-  array.each do |num|
-    product_so_far *= num
+  product_so_far = array[0]
+  index = 1
+  while index < array.length
+    product_so_far *= array[index]
+    index += 1
   end
   product_so_far
 end
 
-p product([1, 2, 3, 4, 10])
+p product([1, 2, 3, 4, -10])
 
