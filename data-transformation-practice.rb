@@ -154,6 +154,22 @@ while index < array.length
 end
 p hash
 
+#  2. Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
+# For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
+
+items = [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}]
+items_hash = {}
+index = 0
+while index < items.length
+  item = items[index]
+  id = item[:id]
+  color = item[:color]
+  price = item[:price]
+  items_hash[id] = {id: id, color: color, price: price}
+  index += 1
+end
+p items_hash
+
 
 
 
