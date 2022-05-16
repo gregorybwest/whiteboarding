@@ -141,7 +141,18 @@ end
 p flipped_hash
 
 
+#  1. Convert an array of arrays into a hash.
+#  For example, [[1, 3], [8, 9], [2, 16]] becomes {1 => 3, 8 => 9, 2 => 16}.
 
+array = [[1, 3], [8, 9], [2, 16]]
+hash = {}
+index = 0
+while index < array.length
+  inner_array = array[index]
+  hash[inner_array[0]] = inner_array[1]
+  index += 1
+end
+p hash
 
 
 
