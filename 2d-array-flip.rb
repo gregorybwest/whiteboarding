@@ -30,15 +30,14 @@ def transpose_2d_array(array)
     # loop through each inner Array
     inner_array.each_with_index do |elem, col|
       # decide if we want to swap this one or not
-      if row >= col
-        next
+      if col > row
+        # save off the thing in first position
+        temp_var = array[row][col]
+        # set the thing in first position to what's currently in second position
+        array[row][col] = array[col][row]
+        # set section position to the thing we saved off from first position
+        array[col][row] = temp_var
       end
-      # save off the thing in first position
-      temp_var = array[row][col]
-      # set the thing in first position to what's currently in second position
-      array[row][col] = array[col][row]
-      # set section position to the thing we saved off from first position
-      array[col][row] = temp_var
     end
   end
   array
