@@ -10,9 +10,9 @@
 # 123, None => raise exception
 
 # Write a function that takes in two strings as arguments
-# Set a variable to an empty string that will store the letter of the common prefix of two strings
-# Set index to 0
-# While index is less than the length of the shorter string
+# Set a variable to an empty string that will store the letter or letters of the common prefix of two strings
+# Set index to 0 to keep track of the first letter of each string
+# While the two strings have equal characters starting from the first character of each string
   # If the letter at the current index for string 1 is equal to the letter at the current index of string 2, add that letter to common_prefix string
   # Else, break
 # Return common_prefix string
@@ -29,3 +29,6 @@ def longest_common_prefix(string1, string2)
 end
 
 p longest_common_prefix("CAT", "CAR")
+p longest_common_prefix("LOG", "LOCK")
+p longest_common_prefix("CAT", "CATER")
+p longest_common_prefix("BABY", "PARTY")
