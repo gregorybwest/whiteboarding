@@ -14,11 +14,13 @@
 # loop through the first array and check if each value is contained in the hash
 # if we get to the end of the first array and each value in the hash contains at least two elements, we retrun true, otherwise return false
 
+# first attempt, doesn't account for which array is larger
+
 def array_subset(array1, array2)
   hash = {}
   array2.each do |num|
     if hash[num] 
-      hash[num] += 1 
+      hash[num] += 1
     else
       hash[num] = 1
     end
@@ -30,7 +32,7 @@ def array_subset(array1, array2)
   end
   p hash.values
   hash.values.each do |value| 
-    if value != 0
+    if value > 0
       return false
     end
   end
@@ -40,3 +42,40 @@ end
 p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
 p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 6])
 p array_subset([1, 2, 3, 4, 5, 6], [6, 3])
+
+
+
+
+def array_subset(array1, array2)
+  hash = {}
+  if array1.length < array2.length
+    smaller_array = array1
+    larger_array = array2
+  else
+    smaller_array = array2
+    larger_array = array1
+  end
+  smaller_array.each do |num|
+    if hash[num]
+      hash[num] += 1
+    else
+      hash[num] = 1
+    end
+  end
+  larger_array.each do |num|
+    if hash[num]
+      hash[num] -= 1
+    end
+  end
+  hash.values.each do |value|
+    if value > 0
+      return false
+    end
+  end
+  return true
+end
+
+p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
+p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 6])
+p array_subset([1, 2, 3, 4, 5, 6], [6, 3])
+p array_subset([6, 3], [1, 2, 3, 4, 5, 6])
