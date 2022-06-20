@@ -56,4 +56,5 @@ p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 2]) == true
 p array_subset([1, 2, 3, 4, 5, 6], [6, 3, 7]) == false
 p array_subset([1, 2, 3, 4, 5, 6, 6, 6], [6, 3, 6]) == true
 p array_subset([1, 2, 3, 4, 5, 6, "hello"], [6, 3, 2, "hello"]) == true
+p array_subset([6, 3, 2], [1, 2, 3, 4, 5, 6]) == true
 
