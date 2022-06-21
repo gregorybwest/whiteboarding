@@ -170,6 +170,75 @@ while index < items.length
 end
 p items_hash
 
+#  3. Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
+#  For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
+
+letter_hash = {}
+"bookkeeper".each_char do |char|
+  if letter_hash[char]
+    letter_hash[char] += 1
+  else
+    letter_hash[char] = 1
+  end
+end
+p letter_hash
+
+
+#  4. Convert a hash into an array of arrays.
+#  For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
+
+items_hash = {"chair" => 100, "book" => 14}
+items_array = []
+items_hash.each do |key, value|
+  items_array << [key, value]
+end
+p items_array
+
+
+#  5. Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
+#  For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
+
+people = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
+people_array = []
+people.each do |id, person|
+  person[:id] = id
+  people_array << person
+end
+p people_array
+
+
+#  6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
+#  For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
+
+words = ["do", "or", "do", "not"]
+words_hash = {}
+words.each do |word|
+  if words_hash[word]
+    words_hash[word] += 1
+  else
+    words_hash[word] = 1
+  end
+end
+p words_hash
+
+
+#  7. Convert a hash into a flat array containing all the hash’s keys and values.
+#  For example, {"a" => 1, "b" => 2, "c" => 3, "d" => 4} becomes ["a", 1, "b", 2, "c", 3, "d", 4].
+
+hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
+array = []
+hash.each do |key, value|
+  array << key
+  array << value
+end
+p array
+
+
+
+
+
+
+
 
 
 
