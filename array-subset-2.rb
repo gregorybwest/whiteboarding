@@ -34,10 +34,8 @@ def array_subset(array1, array2)
   end
 
   larger_array.each do |num|
-    smaller_array_hash.keys.each do |key|
-      if num == key
-        smaller_array_hash[num] -= 1
-      end
+    if smaller_array_hash[num]
+      smaller_array_hash[num] -= 1
     end
   end
 
