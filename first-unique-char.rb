@@ -26,11 +26,18 @@ def first_non_repeating_letter(string)
   end
   letter_hash.each do |key, value|
     if value == 1
-      return key
+      index = 0
+      while index < string.length
+        if string[index] == key
+          return index
+        end
+        index += 1
+      end
     end
   end
 end
 
 
-p first_non_repeating_letter("leetcode") 
-p first_non_repeating_letter("loveleetcode")
+p first_non_repeating_letter("leetcode") == 0
+p first_non_repeating_letter("loveleetcode") == 2
+p first_non_repeating_letter("how is it going with you, hugh?") == 5
