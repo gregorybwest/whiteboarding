@@ -24,7 +24,11 @@ def first_non_repeating_letter(string)
       letter_hash[letter] = 1
     end
   end
-  letter_hash
+  letter_hash.each do |key, value|
+    if value == 1
+      return key
+    end
+  end
 end
 
 
