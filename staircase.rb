@@ -4,7 +4,7 @@ def staircase(height)
   # first row has 1 block
   left_blocks = 1
   right_blocks = 1
-  while spaces >= 0 && left_blocks <= height && right_blocks <= height
+  while height > 0
     print " " * spaces
     print "#" * left_blocks
     print " "
@@ -12,7 +12,8 @@ def staircase(height)
     left_blocks += 1
     spaces -= 1
     right_blocks += 1
+    height -= 1
   end
 end
 
-staircase(12)
+staircase(80)
