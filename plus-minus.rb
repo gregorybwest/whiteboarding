@@ -13,12 +13,9 @@ def plus_minus(arr)
       negative_nums += 1
     end
   end
-  puts (positive_nums.to_f / arr.length)
-  puts (negative_nums.to_f / arr.length)
-  puts (zero_nums.to_f / arr.length)
- 
-
-  
+  puts (positive_nums.to_f / arr.length).round(6)
+  puts (negative_nums.to_f / arr.length).round(6)
+  puts (zero_nums.to_f / arr.length).round(6)
 end
 
 plus_minus([1, 1, 0, -1, -1])
