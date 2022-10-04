@@ -5,7 +5,7 @@
 
 def time_conversion(s)
   time_array = s.split("")
-  hours = (time_array[0] + time_array[1]).to_i
+  hours = time_array[0..1].join.to_i
   if time_array[-2] == "P" && hours < 12
     hours += 12
   elsif time_array[-2] == "A" && hours < 10
