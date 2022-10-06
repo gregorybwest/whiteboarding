@@ -22,17 +22,15 @@
 
 
 def count_apples_and_oranges(s, t, a, b, apples, oranges)
-  apple_locations = []
-  orange_locations = []
   apple_counter = 0
   orange_counter = 0
-  apples.each { |apple| apple_locations << a + apple }
-  oranges.each { |orange| orange_locations << b + orange }
-  (s..t).each do |num|
-    if apple_locations.include?(num)
+  apples.each do |apple|
+    if a + apple >= s && a + apple <= t
       apple_counter += 1
     end
-    if orange_locations.include?(num)
+  end
+  oranges.each do |orange|
+    if b + orange >= s && b + orange <= t
       orange_counter += 1
     end
   end
@@ -40,5 +38,5 @@ def count_apples_and_oranges(s, t, a, b, apples, oranges)
   p orange_counter
 end
 
-count_apples_and_oranges(7, 11, 5, 15, [-2, 2, 1], [5, -6])
 
+count_apples_and_oranges(7, 11, 5, 15, [-2, 2, 1], [5, -6])
