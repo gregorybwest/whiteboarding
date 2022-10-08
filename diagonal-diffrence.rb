@@ -47,11 +47,7 @@ def diagonal_difference(arr)
     end
     i += 1
   end
-  if first_diagonal.sum > second_diagonal.sum
-    return first_diagonal.sum - second_diagonal.sum
-  else
-    return second_diagonal.sum - first_diagonal.sum
-  end
+  (first_diagonal.sum - second_diagonal.sum).abs
 end
 
 
