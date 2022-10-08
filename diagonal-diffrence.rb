@@ -21,34 +21,48 @@
 # if first diagonal is larger than second diagonal, return value of first - second
   # else, return value of second minus first. 
 
-def diagonal_difference(arr)
-  first_diagonal = []
-  second_diagonal = []
-  i = 0
-  while i < arr.length
-    j = 0
-    while j < arr.length
-      if i == j
-        first_diagonal << arr[i][j]
-      end
-      j += 1
-    end
-    i += 1
-  end
-  rotated_arr = arr.transpose.map(&:reverse)
-  i = 0
-  while i < rotated_arr.length
-    j = 0
-    while j < rotated_arr.length
-      if i == j
-        second_diagonal << rotated_arr[i][j]
-      end
-      j += 1
-    end
-    i += 1
-  end
-  (first_diagonal.sum - second_diagonal.sum).abs
+# def diagonal_difference(arr)
+#   first_diagonal = []
+#   second_diagonal = []
+#   i = 0
+#   while i < arr.length
+#     j = 0
+#     while j < arr.length
+#       if i == j
+#         first_diagonal << arr[i][j]
+#       end
+#       j += 1
+#     end
+#     i += 1
+#   end
+#   rotated_arr = arr.transpose.map(&:reverse)
+#   i = 0
+#   while i < rotated_arr.length
+#     j = 0
+#     while j < rotated_arr.length
+#       if i == j
+#         second_diagonal << rotated_arr[i][j]
+#       end
+#       j += 1
+#     end
+#     i += 1
+#   end
+#   (first_diagonal.sum - second_diagonal.sum).abs
+# end
+
+require 'matrix'
+
+def trace(arr)
+  Matrix[*arr].trace
 end
 
+def rotate90(arr)
+  arr.transpose.map(&:reverse)
+end
 
-p diagonal_difference([[1, 2, 3], [4, 5, 6], [9, 8, 9]]) 
+def diagonal_difference(arr)
+  array90 = rotate90(arr)
+  (trace(arr) - trace(array90)).abs
+end
+
+p diagonal_difference([[1, 2, 3], [4, 5, 6], [9, 8, 9]]) == 2
