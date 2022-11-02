@@ -16,7 +16,7 @@ def has_letters(string, array)
     end
   end
   p letter_hash
-  letter_hash.each do |key, value|
+  letter_hash.values.each do |value|
     p value
     if value != 0 
       return false
