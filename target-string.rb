@@ -27,33 +27,27 @@
 # We can make one copy of "aaaaa" by taking the letters at indices 0, 3, 6, 9, and 12.
 # We can make at most one copy of "aaaaa", so we return 1.
 
-
-def rearrange_characters(s, target)
-  target_hash = {}
-  target.each_char do |char|
-    if target_hash[char]
-      target_hash[char] += 1
-    else 
-      target_hash[char] = 1
-    end
-  end
+def hash_string(string)
   string_hash = {}
-  s.each_char do |char|
+  string.each_char do |char|
     if string_hash[char]
       string_hash[char] += 1
-    else
+    else 
       string_hash[char] = 1
     end
   end
-  target_hash.keys.each do |key|
-    if !string_hash[key]
-      return 0
-    end
-  end
+  return string_hash
+end
+
+def rearrange_characters(s, target)
+  target_hash = hash_string(target)
+  string_hash = hash_string(s)
   occurence_quotients = []
   target_hash.each do |key, value|
     if string_hash[key]
       occurence_quotients << string_hash[key] / value
+    else
+      return 0
     end
   end
   return occurence_quotients.min
