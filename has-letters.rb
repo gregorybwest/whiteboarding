@@ -9,16 +9,13 @@ def has_letters(string, array)
       letter_hash[letter] = 1
     end
   end
-  p letter_hash
   array.each do |letter|
     if letter_hash[letter]
       letter_hash[letter] -= 1
-    end
-  end
-  p letter_hash
-  letter_hash.values.each do |value|
-    p value
-    if value != 0 
+      if letter_hash[letter] < 0 
+        return false
+      end
+    else
       return false
     end
   end
@@ -27,4 +24,7 @@ def has_letters(string, array)
 end
 
 
-p has_letters("hello", ["h", "e", "l", "l", "o"])
+p has_letters("hello", ["h", "e", "l", "l", "o"]) == true
+p has_letters("hellllo", ["h", "e", "l", "l", "o"]) == true
+p has_letters("hello", ["h", "e", "l", "l", "o", "f"]) == false
+p has_letters("hello", ["h", "e", "l", "l", "o", "o"]) == false
