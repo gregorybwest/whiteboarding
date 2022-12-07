@@ -3,10 +3,8 @@
 function returnNums() {
   let solution = [];
   for (let num = 2000; num <= 3200; num++) {
-    if (num % 7 === 0) {
-      if (num % 5 !== 0) {
-        solution.push(num);
-      }
+    if (num % 7 === 0 && num % 5 !== 0) {
+      solution.push(num);
     }
   }
   return solution.join(", ");
