@@ -28,4 +28,23 @@ def leap_year(year)
   end
 end
 
-leap_year(2020)
+leap_year(1500)
+leap_year(1600)
+leap_year(2001)
+leap_year(2004)
+
+
+def leap_year(year)
+  if year % 400 != 0 && year % 100 == 0
+    puts "not leap year"
+  elsif year % 4 == 0 
+    puts "leap year!"
+  else
+    puts "not leap year"
+  end
+end
+
+leap_year(1500)
+leap_year(1600)
+leap_year(2001)
+leap_year(2004)
