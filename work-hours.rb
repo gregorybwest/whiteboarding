@@ -6,9 +6,9 @@ def work_hours(work_log)
   hours = []
   index = 0
   while index < work_log.length
-    if work_log[index] == "h" && work_log[index + 1] == "o" && work_log[index + 2] == "u" && work_log[index + 3] == "r" && work_log[index + 4] == "s"
+    if work_log[index] == "h" && work_log[index + 1] == "o" && work_log[index + 2] == "u" && work_log[index + 3] == "r"
       if work_log[index - 3].to_i > 0
-        hours << (work_log[index - 3] + work_log[index - 3]).to_i
+        hours << (work_log[index - 3] + work_log[index - 2]).to_i
       else
         hours << work_log[index - 2].to_i
       end
@@ -19,4 +19,5 @@ def work_hours(work_log)
   hours.sum
 end
 
-puts work_hours("")
+puts work_hours("19 hours 2 hours 1 hour")
+
